@@ -4,11 +4,15 @@ Railsにおける単数と複数の使い分けについてです。controller�
 
 次に、routingと、rake routesした際に確認できるPrefixに関してです。ルーティングを行うと、HTTP動詞 (ブラウザからサーバーに要求を送る際の信号) と、コントローラ内アクションを指すURLが対応付けられます。以下は、rake routesした際に表示される表に、それぞれのアクションの目的を書き添えたものです。
 
-Prefix 　　     Verb   　　    　URI Pattern                Controller#Action      　　　　　　 　　目的
- blogs 　　      GET       　/blogs(.:format)       　　       blogs#index           　 すべてのブログ記事の一覧を表示
-new_blog        GET         /blogs/new(.:format)           　 blogs#new              記事を1つ作成するためのHTMLフォームを返す
-edit_blog       GET         /blogs/:id/edit(.:format)         blogs#edit　　　　　　　　記事編集用のHTMLフォームを1つ返す
- blog           GET         /blogs/:id(.:format)              blogs#show                 特定の記事を表示する
+|Prefix   |Verb |URI Pattern              |Controller#Action|          目的                    |
+|:-----=-:|:---:|:-----------------------:|:---------------:|:--------------------------------:|
+| blogs   | GET |/blogs(.:format)         |blogs#index      |すべてのブログ記事の一覧を表示          | 
+|new_blog | GET |/blogs/new(.:format)     |blogs#new        |記事を1つ作成するためのHTMLフォームを返す | 
+|edit_blog| GET |/blogs/:id/edit(.:format)|blogs#edit       |記事編集用のHTMLフォームを1つ返す       | 
+| blog    | GET |/blogs/:id(.:format)     |blogs#show       |特定の記事を表示する                  | 
+
  
 以上のように、Prefixは、扱うデータが複数のときは複数形、１つのときは単数形になります。
+
+
 
